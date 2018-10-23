@@ -1,0 +1,63 @@
+﻿@model IEnumerable<RealtorCMS.Models.Property>
+<div class="container full-screen">
+
+    <div class="search-filter">
+        <form action="" method="post">
+            <div class="row">
+
+                <div class="col-xs-10">
+                    <div class="row"></div>
+                    <div class="col-xs-3">
+                        Baths<input type="number" name="Baths" />
+                        Price Min<input type="number" name="PriceMin" />
+                    </div>
+                    <div class="col-xs-3">
+                        Beds<input type="number" name="Beds" />
+                        Price Max<input type="number" name="PriceMax" />
+                    </div>
+                    <div class="col-xs-3">
+                        Sqft Min<input type="number" name="SqftMin" />
+                        Sqft Max<input type="number" name="SqftMax" />
+
+                    </div>
+                    <div class="col-xs-3">
+                        City<input type="text" name="City" />
+                    </div>
+                </div>
+
+                <div class="col-xs-2" id="submit">
+                    <input type="submit" value="Filter" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <h1>Properties</h1>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="property col-sm-6 col-lg-4">
+                <div class="inner-property">
+                    <div class="row">
+                        <div class="col-xs-12 no-padding">
+                            <a href="@Url.Action("PropertyDetails", "Home", new { id = item.Id })"><img class="img-featured" src="../../Content/images/@item.ImagePath" /></a><br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <span class="col-xs-4">@item.NumberOfBeds<br />Beds</span>
+                            <span class="col-xs-4">@item.NumberOfBaths<br />Baths</span>
+                            <span class="col-xs-4">@item.SquareFeet<br />Sqft</span>
+                            @{ var days = (DateTime.Now - item.CreateDate).TotalDays;}
+                            <span class="col-xs-12">On site: @Math.Ceiling(days) days</span>
+                        </div>
+                        <div class="col-xs-5 price">
+                            @String.Format("{0:F0}", item.Price) $
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                }
+    </div>
+</div>

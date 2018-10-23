@@ -1,0 +1,212 @@
+﻿
+/*Defaults------------------*/
+body {
+    padding-top: 50px;
+    padding-bottom: 0px;
+    font-family: 'Lato', sans-serif;
+
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/* Bootstrap Fix Classses*/
+/*
+$blue-lighter-menu:#00B9E8;
+$blue-darker:#5FBFF9;
+$white:#FFFFFF;
+$black-dark:#090C08;
+$black-grey:#171D1C;
+*/
+.navbar-inverse{
+
+    background-color:rgba(0,185,232,0.8);
+    border-color:#5FBFF9;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFF;
+}
+.navbar-inverse .navbar-nav > li > a:hover{
+    color: #090C08;
+}
+.btn-primary{
+    background-color:#00B9E8;
+}
+.row{
+    padding-left:0px;
+    padding-right:0px;
+    margin-left:0px;
+    margin-right:0px;
+}
+.navbar{
+     padding:0px 0px;
+     margin:0px;
+}
+.navbar-header{
+    margin-left:20px;
+}
+.container-fluid{
+    padding:0px;
+    margin:0px;
+}
+
+/*HOMEPAGE STYLING*/
+a.navbar-brand.logo{
+   color :#171D1C;
+}
+.white{
+    color:#fff;
+}
+.test{
+    background-color:red;
+}
+.img-limited{
+    max-width: 300px;
+    height: auto;
+}
+.img-block{
+    display:block;
+    margin:auto;
+}
+h1{
+    color:#5FBFF9;
+}
+.margin-bottom{
+    margin-bottom:50px;
+}
+.blue{
+    width:170px;
+    height:130px;
+    border:1px solid #5FBFF9;
+    margin-top:50px;
+}
+.blue-link{
+    display:block;
+    margin:auto;
+    position: relative;
+    top: 48%;
+    left:10%;
+}
+/* Management Services setup*/
+.back-img{
+     background-image:url(/Content/LivingRoom.jpg);
+     background-position:center;
+     background-repeat:no-repeat;
+     background-size:cover;
+}
+
+.see-through{
+    color:#f7f7f2;
+    background:rgba(49,57,63,0.7);
+}
+
+.management-services{
+    color:#68b8cc;
+}
+#heading{
+     background:rgba(104, 184, 204,0.5);
+     color:#f7f7f2;
+}
+.margin-top-bottom{
+    padding:40px 0px;
+}
+.margin-bottom-top-twenty{
+    padding-bottom:20px;
+    padding-top:20px;
+}
+
+/* -----------------Swiper */
+.swiper-container {
+    width: 100%;
+    height: calc(100vh - 50px);
+}      
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+.swiper-slide-inner{
+    margin:35vh auto;
+    height:30%;
+    width:50%;
+    text-align:center;
+    z-index:999999;
+    color:white;
+}
+/* Footer Settings */
+footer{
+    padding-top:30px;
+    margin:0px;
+    background-color:#171D1C;
+    color:#00B9E8;
+
+}
+footer div{
+    padding-bottom:20px;   
+}
+/* Property Settings */
+.img-featured{
+    max-width:100%;
+}
+
+.inner-property{
+    border:1px solid #171D1C;
+    padding:5px;
+    margin:5px;
+}
+.inner-property:hover{
+    border:1px solid #00B9E8;  
+}
+.no-padding{
+    padding:0px;
+}
+.price{
+    color:limegreen;
+    padding-top:20px;
+    font-size:1.4em;
+}
+
+.search-filter{
+    margin-top:20px;
+    border:1px solid #00B9E8;
+    padding:20px;
+}
+
+#submit{
+    padding-top:40px;
+}
+div.container.body-content.full-screen{
+    min-height: 85vh;
+}
+.limegreen{
+    color:limegreen;
+}
+.full-screen{
+    min-height:85vh;
+}
+.heart{
+    color:#fff;
+}
+.heart:hover{
+    color:black;
+}
+#nav{
+    margin-left:25px;
+}

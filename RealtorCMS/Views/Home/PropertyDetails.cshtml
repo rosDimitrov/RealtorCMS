@@ -1,0 +1,45 @@
+﻿@model RealtorCMS.Models.Property
+<div class="container">
+
+    @Html.ActionLink("Back all properties", "Buy", "Home")
+    <div class="row">
+        <div class="col-xs-10 col-sm-offset-1">
+
+            <div class="margin-bottom">
+                <h1>@Model.Address | @Model.City | @Model.PropertyType | <br/><span class="limegreen">@String.Format("{0:F0}", Model.Price) $
+</span></h1>
+                <p>
+                    @Model.NumberOfBeds Beds | @Model.NumberOfBaths Baths | @Model.SquareFeet Square feet
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (ViewBag.Favorite)
+                        {
+                            @Html.ActionLink("Remove from Favorites", "RemoveFavorite", "Home", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Add to Favorites", "AddToFavorites", "Home", new { id = Model.Id }, new { @class = "btn btn-success" })
+                        }
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Login to Add to Favorites", "Login", "Account", new { id = Model.Id }, new { @class = "btn btn-danger" })
+                    }
+
+                </p>
+
+                @{
+                    var path = "../../Content/images/" + Model.ImagePath;
+                }
+                <img src="@path" class="img-responsive img-block" />
+                <p>@Model.Description</p>
+
+                <h2>Location of the property</h2>
+                @Model.MapLink
+                <h2>Video presentation of the house</h2>
+                @Model.YouTubeLink
+            </div>
+        </div>
+    </div>
+
+</div>

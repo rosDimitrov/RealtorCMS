@@ -1,0 +1,43 @@
+﻿@model IEnumerable<RealtorCMS.Models.Property>
+@{Layout = null;}
+<div class="container">
+    <h1>Featured Properties</h1>
+
+    @if (Model.Count() > 0)
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="property col-sm-6 col-lg-4">
+                    <div class="inner-property">
+                        <div class="row">
+                            <div class="col-xs-12 no-padding">
+                                <a href="@Url.Action("PropertyDetails", "Home", new { id = item.Id })">
+                                    <img class="img-featured" src="../../Content/images/@item.ImagePath" />
+                                </a><br />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7">
+                                <span class="col-xs-4">@item.NumberOfBeds<br />Beds</span>
+                                <span class="col-xs-4">@item.NumberOfBaths<br />Baths</span>
+                                <span class="col-xs-4">@item.SquareFeet<br />Sqft</span>
+                                @{ var days = (DateTime.Now - item.CreateDate).TotalDays;}
+                                <span class="col-xs-12">On site: @Math.Ceiling(days) days</span>
+                            </div>
+                            <div class="col-xs-5 price">
+                                @String.Format("{0:F0}", item.Price) $
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                    }
+        </div>
+                                    }
+                                    else
+                                    {
+    < p > There are currently no featured properties </ p >
+                                    }
+
+</div>

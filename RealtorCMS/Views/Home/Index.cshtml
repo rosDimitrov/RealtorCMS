@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="container-fluid body-content">
+
+    @*Swiper *@
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide" style="background-image:url(../../Content/vita-vilcina-32172.jpg)">
+                <div class="swiper-slide-inner">
+                    <h1 class="white">We dont't sell houses, we find homes</h1>
+                    <a href="@Url.Action("Buy","Home")" class="btn btn-info">Find Your Home</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide" style="background-image:url(../../Content/beautiful-sunset-images-196063.jpg)">
+                <div class="swiper-slide-inner">
+                    <h1 class="white">Feel the freedom with our property management services</h1>
+                    <a href="@Url.Action("Manage","Home")" class="btn btn-info">Property Management</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+
+
+    @*Featured Properties *@
+    @Html.Action("FeaturedProperties", "Home")
+
+</div>

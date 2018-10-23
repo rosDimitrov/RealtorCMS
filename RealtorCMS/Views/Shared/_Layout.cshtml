@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/swiper.min.css" rel="stylesheet" />
+
+    <!--Zendesk Chat-->
+
+    <script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="https://v2.zopim.com/?4mqWMmZETsWbMYHXM1qIasYsw8KWpSYV";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+    </script>  
+    <script src="https://use.fontawesome.com/47234dee4f.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("AgentCMS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand logo" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" id="nav">
+                    <li>@Html.ActionLink("Buy", "Buy", "Home")</li>
+                    <li>@Html.ActionLink("Sell", "Sell", "Home")</li>
+                    <li>@Html.ActionLink("Management", "Management", "Home")</li>
+                    <li>@Html.ActionLink("Blog", "Blog", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li><a href="@Url.Action("Favorites","Home")"><i class="fa fa-heart fa-lg heart" aria-hidden="true"></i></a></li>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
+                    }
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+        @RenderBody()
+
+    <footer class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm-6 col-sm-push-1 text-center">
+                <br/><br/><p>Agent CMS All rights reserved</p>
+            </div>
+            <div class="col-sm-4 col-sm-push-2 text-center">
+                <p>Connect with us</p>
+                <a href="http://www.facebook.com"><img src="~/Content/FB-f-Logo__blue_50.png" /></a>
+                <a href="http://www.twitter.com"><img src="~/Content/Twitter_Logo_White_On_Blue.png"/></a>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/swiper.min.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        loop: true,
+        speed:1500,
+        spaceBetween: 30,
+        effect: 'fade',
+        autoplay: 4000
+    });
+    </script>
+</body>
+</html>
